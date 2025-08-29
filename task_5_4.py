@@ -111,20 +111,3 @@ class Matrix:
                 value = round(self.get_value(row, col), n)
                 new_matrix.set_value(row, col, value)
         return new_matrix
-
-
-m = Matrix(3,5, 7)
-m.set_value(1,2,3.123)
-m.set_value(0,0,1)
-m.set_value(0,1,2)
-print(m)
-print()
-print(+m)
-print()
-print(-m)
-print()
-x = ~m
-print(x.rows, x.cols)
-print(~m)
-print()
-print(round(m,1))
