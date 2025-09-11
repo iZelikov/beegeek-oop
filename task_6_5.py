@@ -219,7 +219,6 @@ class Node:
                 result.append(item)
         return result
 
-
 class TreeBuilder:
     def __init__(self):
         self.root: Node = Node()
