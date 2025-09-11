@@ -27,7 +27,7 @@ class DevelopmentTeam:
 
 class AttrsIterator:
     def __init__(self, obj):
-        self.iter = iter(obj.__dict__.items())
+        self.iter = iter(obj.__dict__.children())
 
     def __iter__(self):
         return self

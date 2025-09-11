@@ -3,7 +3,7 @@ import io
 import sys
 import os
 
-from task_6_4 import *
+from task_6_5 import *
 
 def get_latest_file(folder_path='', ext='zip'):
     files = os.listdir(folder_path)  # Получаем список файлов в каталоге
