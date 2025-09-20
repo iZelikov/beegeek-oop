@@ -3,7 +3,7 @@ import io
 import sys
 import os
 
-from task_7_6 import *
+from task_7_7 import *
 
 def get_latest_file(folder_path='', ext='zip'):
     files = os.listdir(folder_path)  # Получаем список файлов в каталоге
@@ -41,8 +41,8 @@ def test(test_number=None):
                 exec(t)  # Выполнить файл с тестом, всегда вернет None
                 answer = output.getvalue().rstrip('\n')  # Получаем данные, которые были напечатаны
                 sys.stdout = sys.__stdout__  # Возвращаем стандартный вывод на место
-                print('etalon: ', '\033[1;34m', a, '\033[m')  # выводим ответ
-                print('answer: ', '\033[1;32m' if answer == a else '\033[1;31m', answer, '\033[m')
+                print('etalon:\n', '\033[1;34m', a, '\033[m', sep = '')  # выводим ответ
+                print('answer:\n', '\033[1;32m' if answer == a else '\033[1;31m', answer, '\033[m', sep = '')
                 if answer == a:
                     tests_passed += 1
                 else:
