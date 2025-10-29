@@ -144,6 +144,30 @@ class Time:
         self.hours = (self.hours + self.minutes // 60) % 24
         self.minutes = self.minutes % 60
 
+class Path:
+    def __init__(self, *args):
+        self.path = list(args)
+
+    def __repr__(self):
+        return f"Path('{str(self)}')"
+
+    def __str__(self):
+        return '/'.join(map(str, self.path))
+
+    def __truediv__(self, other):
+        if isinstance(other, (str, self.__class__)):
+            return Path(*self.path, other)
+        else:
+            return NotImplemented
+
+    def __itruediv__(self, other):
+        if isinstance(other, (str, self.__class__)):
+            self.path.append(other)
+            return self
+        else:
+            return NotImplemented
+
+
 
 class QNode:
     def __init__(self, value):
